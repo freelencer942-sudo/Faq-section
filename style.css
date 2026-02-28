@@ -1,0 +1,91 @@
+/* General Page Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  margin: 0;
+}
+
+.faq-container {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* FAQ Item Styling */
+.faq-item {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 20px 0;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #007bff;
+}
+
+.icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+/* Smooth Accordion Animation Logic */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr; /* Collapsed by default */
+  transition: grid-template-rows 0.3s ease-out;
+}
+
+.faq-content {
+  overflow: hidden; /* Hides content when grid row is 0 */
+}
+
+.faq-content p {
+  margin: 0 0 20px 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Active State Styling */
+.faq-item.active .faq-answer {
+  grid-template-rows: 1fr; /* Expands smoothly to fit content */
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg); /* Rotates the '+' into an 'x' */
+  color: #007bff;
+}
+
+.faq-item.active .faq-question {
+  color: #007bff;
+}
